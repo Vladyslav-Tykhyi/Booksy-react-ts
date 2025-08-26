@@ -1,0 +1,38 @@
+.hero_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 227px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+  border: 1px solid #e15d05;
+  border-radius: 4px;
+  background-color: #e15d05;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  padding: 8px 20px;
+}
+
+.hero_btn:hover {
+  background-color: #ff6f1f;
+  border-color: #ff6f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero_btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(225, 93, 5, 0.6);
+}
+
+.hero_btn:active {
+  transform: translateY(0);
+  background-color: #cc4f04;
+  border-color: #cc4f04;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

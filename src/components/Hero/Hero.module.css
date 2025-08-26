@@ -1,0 +1,13 @@
+.hero {
+}
+.hero_container {
+  margin: 24px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+.hero_box_btn {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

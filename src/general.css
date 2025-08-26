@@ -77,3 +77,9 @@ button {
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  background-color: #fceee6;
+}

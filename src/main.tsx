@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./general.css";
 import "modern-normalize";
-import App from "./components/App.tsx";
+import App from "./components/App/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
