@@ -4,7 +4,6 @@ import type { BgVariant } from "../../../services/types";
 type HeroBGProps = {
   children: React.ReactNode;
   background: BgVariant;
-  isTransitioning: boolean;
 };
 
 const HeroBG: React.FC<HeroBGProps> = ({ children, background }) => {
