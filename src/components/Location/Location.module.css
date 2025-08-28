@@ -1,0 +1,23 @@
+.location_container {
+  padding: 64px 0;
+}
+
+.location_text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #0b0500;
+  margin: 0 0 16px 0;
+}
+
+.location_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin: 0 0 80px 0;
+}
+
+.location_box {
+  max-width: 732px;
+}

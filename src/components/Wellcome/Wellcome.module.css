@@ -1,0 +1,10 @@
+.wellcome_container {
+  padding: 64px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wellcome_text_box {
+  max-width: 640px;
+}
