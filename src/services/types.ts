@@ -5,3 +5,9 @@ export type HeroTexts =
   | "Save 15% on some books"
   | " Summer Sale! Up to - 40 % discounts"
   | "Last chance to buy our spring bestsellers";
+
+//!footer
+export type FooterFormProps = {
+  isOpen?: boolean;
+  onClick: () => void;
+};

@@ -7,9 +7,9 @@
   justify-content: space-between;
   align-items: center;
 }
-.list-item {
+.list_item {
 }
-.list-item-link {
+.list_item_link {
   position: relative;
   display: inline-block;
   font-size: 16px;
@@ -20,7 +20,7 @@
   transition: color 0.25s ease;
 }
 
-.list-item-link::after {
+.list_item_link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -33,18 +33,18 @@
   transition: transform 0.25s ease;
 }
 
-.list-item-link:hover {
+.list_item_link:hover {
   color: #000;
 }
 
-.list-item-link:hover::after {
+.list_item_link:hover::after {
   transform: scaleX(1);
 }
 
-.list-item-link:focus-visible {
+.list_item_link:focus-visible {
   outline: none;
 }
 
-.list-item-link:focus-visible::after {
+.list_item_link:focus-visible::after {
   transform: scaleX(1);
 }

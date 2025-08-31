@@ -1,0 +1,9 @@
+.footer_contact_box {
+  margin: 0 0 80px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_logo {
+  margin: 0 0 32px 0;
+}
