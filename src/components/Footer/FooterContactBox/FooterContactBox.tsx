@@ -5,7 +5,7 @@ import FooterNav from "./FooterNav/FooterNav";
 
 import type { FooterFormProps } from "../../../services/types";
 
-const FooterContactBox = ({ onClick }: FooterFormProps) => {
+const FooterContactBox = ({ onClick, userEmail }: FooterFormProps) => {
   return (
     <div className={s.footer_contact_box}>
       <div className={s.footer_nav_box}>
@@ -14,7 +14,7 @@ const FooterContactBox = ({ onClick }: FooterFormProps) => {
         </div>
         <FooterNav />
       </div>
-      <FooterForm onClick={onClick} />
+      <FooterForm onClick={onClick} userEmail={userEmail} />
     </div>
   );
 };

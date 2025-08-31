@@ -36,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <div className={s.hero}>
+    <div className={s.hero} id="home">
       <HeroBG background={bgVariants[bgIndex]}>
         <HeroText heroText={heroText} />
         <HeroBTN />

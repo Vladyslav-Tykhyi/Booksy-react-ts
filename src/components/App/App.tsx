@@ -6,12 +6,19 @@ import Location from "../Location/Location";
 import Footer from "../Footer/Footer";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
+import type { EmailData } from "../../services/types";
 
 const App = () => {
-  // const [email, setEmail] = useState({ name: "", email: "", message: "" });
+  const [email, setEmail] = useState<EmailData>({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [isOpen, setIsModalOpen] = useState(false);
   // !footer/modal
-  const onClick = () => setIsModalOpen((prev) => !prev);
+  const onClick = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   // !footer
 
@@ -25,8 +32,15 @@ const App = () => {
           <Location />
         </main>
       </div>
-      <Footer onClick={onClick} />
-      {isOpen && <Modal onClick={onClick} isOpen={isOpen} />}
+      <Footer onClick={onClick} userEmail={setEmail} />
+      {isOpen && (
+        <Modal
+          onClick={onClick}
+          isOpen={isOpen}
+          userEmailField={email}
+          setUserEmailField={setEmail}
+        />
+      )}
     </div>
   );
 };

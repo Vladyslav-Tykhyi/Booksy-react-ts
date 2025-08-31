@@ -2,10 +2,11 @@ import s from "./FooterForm.module.css";
 import FooterFormJoin from "./FooterFormJoin/FooterFormJoin";
 import type { FooterFormProps } from "../../../../services/types";
 
-const FooterForm = ({ onClick }: FooterFormProps) => {
+const FooterForm = ({ onClick, userEmail }: FooterFormProps) => {
   const form = (formData: FormData) => {
-    const userEmail = formData.get("email") as string;
+    const useEmail = formData.get("email") as string;
     console.log(`UserEmail: ${userEmail}`);
+    userEmail((prev) => ({ ...prev, email: useEmail }));
   };
 
   return (
@@ -16,8 +17,9 @@ const FooterForm = ({ onClick }: FooterFormProps) => {
           type="text"
           name="email"
           className={s.input}
-          placeholder="Enter your email*"
-          required
+          placeholder="Enter your email"
+          autoComplete="email"
+          id="email"
         />
         <button
           className={s.form_btn}

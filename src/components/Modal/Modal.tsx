@@ -3,18 +3,35 @@ import s from "./Modal.module.css";
 import { IoCloseOutline } from "react-icons/io5";
 import { createPortal } from "react-dom";
 
-import type { FooterFormProps } from "../../services/types";
+import type { ModalProps } from "../../services/types";
 
 import clsx from "clsx";
 import { useEffect } from "react";
 
-const Modal = ({ onClick, isOpen }: FooterFormProps) => {
+const Modal = ({
+  onClick,
+  isOpen,
+  userEmailField,
+  setUserEmailField,
+}: ModalProps) => {
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClick();
     }
   };
+
+  const onSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onClick();
+    setUserEmailField({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
   useEffect(() => {
+    if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClick();
     };
@@ -28,15 +45,22 @@ const Modal = ({ onClick, isOpen }: FooterFormProps) => {
       document.body.style.overflow = prev;
     };
   }, [isOpen, onClick]);
+
+  const onInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.currentTarget;
+    setUserEmailField((prev) => ({ ...prev, [name]: value }));
+  };
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
-      <div className={s.modal}>
+      <div className={s.modal} role="dialog" aria-modal="true">
         <button onClick={onClick} aria-label="Close modal">
           <IoCloseOutline className={s.closeButton} />
         </button>
         <h2 className={s.heading}>Register</h2>
         <p className={s.subText}>Cozy Book Club — "The Midnight Library"</p>
-        <form className={s.form}>
+        <form className={s.form} onSubmit={onSubmit}>
           <div className={s.formfield}>
             <label htmlFor="name" className={s.label}>
               Name*
@@ -48,6 +72,9 @@ const Modal = ({ onClick, isOpen }: FooterFormProps) => {
               className={s.input}
               required
               autoComplete="name"
+              id="name"
+              onChange={onInput}
+              value={userEmailField?.name}
             />
           </div>
           <div className={s.formfield}>
@@ -61,6 +88,9 @@ const Modal = ({ onClick, isOpen }: FooterFormProps) => {
               className={s.input}
               required
               autoComplete="email"
+              id="email"
+              onChange={onInput}
+              value={userEmailField?.email}
             />
           </div>
           <div className={s.formfield}>
@@ -69,11 +99,14 @@ const Modal = ({ onClick, isOpen }: FooterFormProps) => {
             </label>
             <textarea
               name="message"
+              id="message"
               placeholder="Type your message..."
               className={clsx(s.input, s.textarea)}
+              onChange={onInput}
+              value={userEmailField?.message}
             />
           </div>
-          <button className={s.btn} type="button" aria-label="Submit modal">
+          <button className={s.btn} type="submit" aria-label="Submit modal">
             Register
           </button>
         </form>

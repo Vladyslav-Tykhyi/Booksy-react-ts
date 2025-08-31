@@ -6,8 +6,22 @@ export type HeroTexts =
   | " Summer Sale! Up to - 40 % discounts"
   | "Last chance to buy our spring bestsellers";
 
-//!footer
+export type EmailData = {
+  name: string;
+  email: string;
+  message?: string;
+};
+
 export type FooterFormProps = {
-  isOpen?: boolean;
+  userEmail: React.Dispatch<React.SetStateAction<EmailData>>;
   onClick: () => void;
+};
+
+export type ModalProps = {
+  isOpen: boolean;
+  onClick: () => void;
+  userEmailField: { name: string; email: string; message?: string };
+  setUserEmailField: React.Dispatch<
+    React.SetStateAction<{ name: string; email: string; message?: string }>
+  >;
 };
