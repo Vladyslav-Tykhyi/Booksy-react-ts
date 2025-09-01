@@ -6,22 +6,36 @@ export type HeroTexts =
   | " Summer Sale! Up to - 40 % discounts"
   | "Last chance to buy our spring bestsellers";
 
-export type EmailData = {
+export interface EmailData {
   name: string;
   email: string;
   message?: string;
-};
+}
 
-export type FooterFormProps = {
+export interface FooterFormProps {
   userEmail: React.Dispatch<React.SetStateAction<EmailData>>;
   onClick: () => void;
-};
+}
 
-export type ModalProps = {
+export interface ModalProps {
   isOpen: boolean;
   onClick: () => void;
   userEmailField: { name: string; email: string; message?: string };
   setUserEmailField: React.Dispatch<
     React.SetStateAction<{ name: string; email: string; message?: string }>
   >;
-};
+}
+
+export interface EventItem {
+  id: number;
+  img1x: string;
+  img2x: string;
+  alt: string;
+  heading: string;
+  accessibility: string;
+  text: string;
+}
+
+export interface EventsListProps {
+  handleRegister: () => void;
+}

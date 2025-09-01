@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import type { EmailData } from "../../services/types";
+import Events from "../Events/Events";
 
 const App = () => {
   const [email, setEmail] = useState<EmailData>({
@@ -28,6 +29,7 @@ const App = () => {
         <Header />
         <main>
           <Hero />
+          <Events handleRegister={onClick} />
           <Wellcome />
           <Location />
         </main>

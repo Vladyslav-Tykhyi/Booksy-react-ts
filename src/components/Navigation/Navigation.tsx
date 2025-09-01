@@ -1,55 +1,34 @@
 import type React from "react";
 import s from "./Navigation.module.css";
 
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+const links: NavLink[] = [
+  { href: "#home", label: "Home" },
+  { href: "#books", label: "Books" },
+  { href: "#feedbacks", label: "Feedbacks" },
+  { href: "#events", label: "Events" },
+  { href: "#location", label: "Location" },
+];
+
 const Navigation: React.FC = () => {
   return (
     <nav className={s.nav}>
       <ul className={s.list}>
-        <li className={s.list_item}>
-          <a
-            href="#home"
-            className={s.list_item_link}
-            rel="noopener noreferrer"
-          >
-            Home
-          </a>
-        </li>
-        <li className={s.list_item}>
-          <a
-            href="#books"
-            className={s.list_item_link}
-            rel="noopener noreferrer"
-          >
-            Books
-          </a>
-        </li>
-        <li className={s.list_item}>
-          <a
-            href="#feedbacks"
-            className={s.list_item_link}
-            rel="noopener noreferrer"
-          >
-            Feedbacks
-          </a>
-        </li>
-        <li className={s.list_item}>
-          <a
-            href="#events"
-            className={s.list_item_link}
-            rel="noopener noreferrer"
-          >
-            Events
-          </a>
-        </li>
-        <li className={s.list_item}>
-          <a
-            href="#location"
-            className={s.list_item_link}
-            rel="noopener noreferrer"
-          >
-            Location
-          </a>
-        </li>
+        {links.map(({ href, label }) => (
+          <li key={href} className={s.list_item}>
+            <a
+              href={href}
+              className={s.list_item_link}
+              rel="noopener noreferrer"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  gap: 24px;
+}
+
+.listItem {
+  width: calc((100% - (24px * 2)) / 3);
+  display: flex;
+  flex-direction: column;
+  height: 521px;
+}

@@ -5,7 +5,7 @@ import type { FooterFormProps } from "../../../../services/types";
 const FooterForm = ({ onClick, userEmail }: FooterFormProps) => {
   const form = (formData: FormData) => {
     const useEmail = formData.get("email") as string;
-    console.log(`UserEmail: ${userEmail}`);
+
     userEmail((prev) => ({ ...prev, email: useEmail }));
   };
 

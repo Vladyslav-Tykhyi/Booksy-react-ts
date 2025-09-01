@@ -1,0 +1,22 @@
+.heading {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+}
+
+.accessibility {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0b0500;
+  margin: 0 0 8px 0;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0b0500;
+}

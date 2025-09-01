@@ -6,10 +6,8 @@ import LocationTitle from "./LocationTitle/LocationTitle";
 
 const Location = () => {
   return (
-    <div className={s.location_container}>
-      <p className={s.location_text} id="location">
-        Location
-      </p>
+    <div className={s.location_container} id="location">
+      <p className={s.location_text}>Location</p>
       <div className={s.location_wrapper}>
         <div className={s.location_box}>
           <LocationTitle />
