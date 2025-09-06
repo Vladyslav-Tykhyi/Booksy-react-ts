@@ -4,7 +4,7 @@ import EventsContentBox from "./EventsContentBox/EventsContentBox";
 import EventsHeading from "./EventsHeading.tsx/EventsHeading";
 import EventsList from "./EventsList/EventsList";
 
-const Events: React.FC<EventsListProps> = ({ handleRegister }) => {
+const Events = ({ handleRegister }: EventsListProps) => {
   return (
     <div className={s.eventsContainer} id="events">
       <EventsHeading />

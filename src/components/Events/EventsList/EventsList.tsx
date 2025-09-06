@@ -6,7 +6,7 @@ import EventsListInfo from "./EventsListInfo/EventsListInfo";
 import { eventsData } from "./EventsData";
 import type { EventsListProps } from "../../../services/types";
 
-const EventsList: React.FC<EventsListProps> = ({ handleRegister }) => {
+const EventsList = ({ handleRegister }: EventsListProps) => {
   return (
     <div>
       <ul className={s.list}>

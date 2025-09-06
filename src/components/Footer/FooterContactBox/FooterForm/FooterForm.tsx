@@ -20,6 +20,7 @@ const FooterForm = ({ onClick, userEmail }: FooterFormProps) => {
           placeholder="Enter your email"
           autoComplete="email"
           id="email"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
         />
         <button
           className={s.form_btn}

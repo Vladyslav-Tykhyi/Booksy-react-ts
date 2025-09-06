@@ -8,6 +8,7 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import type { EmailData } from "../../services/types";
 import Events from "../Events/Events";
+import Feedback from "../Feedback/Feedback";
 
 const App = () => {
   const [email, setEmail] = useState<EmailData>({
@@ -29,6 +30,7 @@ const App = () => {
         <Header />
         <main>
           <Hero />
+          <Feedback />
           <Events handleRegister={onClick} />
           <Wellcome />
           <Location />

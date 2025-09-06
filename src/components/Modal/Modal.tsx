@@ -91,6 +91,7 @@ const Modal = ({
               id="email"
               onChange={onInput}
               value={userEmailField?.email}
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
             />
           </div>
           <div className={s.formfield}>

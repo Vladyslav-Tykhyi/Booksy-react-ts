@@ -1,0 +1,59 @@
+.list {
+  margin: 80px 0 32px 0;
+}
+.listItem {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.userText {
+  font-size: 18px;
+  line-height: 120%;
+  color: #0b0500;
+  margin: 0 0 24px 0;
+}
+
+.userProfile {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.userAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-color: #0b0500;
+}
+.userName {
+  font-weight: 600;
+  line-height: 150%;
+  color: #0b0500;
+}
+
+.userRole {
+  line-height: 150%;
+  color: #0b0500;
+}
+
+.buttonBox {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 0 auto;
+}
+
+:global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+  bottom: 16px;
+  width: 70px;
+}
+
+:global(.mySwiper .swiper-pagination-bullet) {
+  background-color: #333;
+  opacity: 1;
+}
+
+:global(.mySwiper .swiper-pagination-bullet-active) {
+  background-color: #ff6600;
+}
