@@ -9,6 +9,7 @@ import Modal from "../Modal/Modal";
 import type { EmailData } from "../../services/types";
 import Events from "../Events/Events";
 import Feedback from "../Feedback/Feedback";
+import Books from "../Books/Books";
 
 const App = () => {
   const [email, setEmail] = useState<EmailData>({
@@ -30,6 +31,7 @@ const App = () => {
         <Header />
         <main>
           <Hero />
+          <Books />
           <Feedback />
           <Events handleRegister={onClick} />
           <Wellcome />

@@ -4,7 +4,7 @@ import FeedbackSubText from "./FeedbackSubText/FeedbackSubText";
 
 const Feedback = () => {
   return (
-    <div>
+    <div className={s.container} id="feedbacks">
       <h2 className={s.heading}>Customer Feedbacks</h2>
       <FeedbackSubText />
       <FeedbackList />

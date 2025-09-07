@@ -1,0 +1,9 @@
+.BookCategory {
+  width: 308px;
+}
+
+.booksBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,31 @@
+.booksButton {
+  font-size: 16px;
+  line-height: 150%;
+  color: #0b0500;
+  background-color: transparent;
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.booksButton:hover {
+  background-color: #0b0500;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.booksButton:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.booksButton:active {
+  transform: translateY(0);
+  background-color: #333;
+  border-color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

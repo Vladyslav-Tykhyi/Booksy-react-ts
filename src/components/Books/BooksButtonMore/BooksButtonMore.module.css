@@ -1,0 +1,31 @@
+.button {
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+  padding: 12px 130px;
+  border: 1px solid #e15d05;
+  border-radius: 4px;
+  background-color: #e15d05;
+  display: block;
+  margin: 24px auto 0;
+}
+
+.button:hover {
+  background-color: #ff6f1f;
+  border-color: #ff6f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(225, 93, 5, 0.6);
+}
+
+.button:active {
+  transform: translateY(0);
+  background-color: #cc4f04;
+  border-color: #cc4f04;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

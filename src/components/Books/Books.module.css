@@ -1,0 +1,8 @@
+.books {
+  padding: 32px 0 0 0;
+}
+
+.wrapper {
+  display: flex;
+  gap: 24px;
+}

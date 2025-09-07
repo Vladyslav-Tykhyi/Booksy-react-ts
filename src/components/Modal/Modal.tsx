@@ -1,12 +1,12 @@
 import s from "./Modal.module.css";
 
-import { IoCloseOutline } from "react-icons/io5";
 import { createPortal } from "react-dom";
 
 import type { ModalProps } from "../../services/types";
 
 import clsx from "clsx";
 import { useEffect } from "react";
+import ModalCloseButton from "../ModalCloseButton/ModalCloseButton";
 
 const Modal = ({
   onClick,
@@ -55,9 +55,7 @@ const Modal = ({
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
       <div className={s.modal} role="dialog" aria-modal="true">
-        <button onClick={onClick} aria-label="Close modal">
-          <IoCloseOutline className={s.closeButton} />
-        </button>
+        <ModalCloseButton onClick={onClick} />
         <h2 className={s.heading}>Register</h2>
         <p className={s.subText}>Cozy Book Club — "The Midnight Library"</p>
         <form className={s.form} onSubmit={onSubmit}>

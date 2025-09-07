@@ -10,7 +10,7 @@ const EventsListImg = ({ img1x, img2x, alt }: ListImgProps) => {
   return (
     <picture className={s.img}>
       <source srcSet={`${img1x} 1x, ${img2x} 2x`} media="(min-width:1158px)" />
-      <img src={img1x} alt={alt} />
+      <img src={img1x} alt={alt} loading="lazy" />
     </picture>
   );
 };

@@ -1,0 +1,57 @@
+.booksList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 24px;
+  width: 980px;
+}
+
+.booksListItem {
+  width: calc((100% - 72px) / 4);
+  display: flex;
+  flex-direction: column;
+}
+
+.bookImg {
+  display: block;
+  margin: 0 0 16px 0;
+}
+
+.contentWrapper {
+  margin: auto 0 0 0;
+}
+
+.bookDescriptionBox {
+  margin: 0 0 16px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.booksHeading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #0b0500;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.booksAuthor {
+  font-size: 14px;
+  line-height: 150%;
+  color: #0b0500;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.booksPrice {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #0b0500;
+}
