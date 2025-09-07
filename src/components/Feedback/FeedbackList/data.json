@@ -4,47 +4,47 @@
     "text": "Great selection, fast delivery, and beautifully packaged books. My go-to store for weekend reads!",
     "name": "Jane Doe",
     "role": "Book Lover, Reader",
-    "avatar": "./feedback_img/user1.png",
-    "avatar2x": "./feedback_img/user1@2x.png"
+    "avatar": "/feedback_img/user1.png",
+    "avatar2x": "/feedback_img/user1@2x.png"
   },
   {
     "id": 2,
     "text": "Customer service was super helpful, and my order arrived earlier than expected. Highly recommend!",
     "name": "John Smith",
     "role": "Editor, BookMag",
-    "avatar": "./feedback_img/user2.png",
-    "avatar2x": "./feedback_img/user2@2x.png"
+    "avatar": "/feedback_img/user2.png",
+    "avatar2x": "/feedback_img/user2@2x.png"
   },
   {
     "id": 3,
     "text": "Love the curated picks and clear descriptions. Makes it easy to find my next favorite book.",
     "name": "Emily Johnson",
     "role": "Author, Novelist",
-    "avatar": "./feedback_img/user3.png",
-    "avatar2x": "./feedback_img/user3@2x.png"
+    "avatar": "/feedback_img/user3.png",
+    "avatar2x": "/feedback_img/user3@2x.png"
   },
   {
     "id": 4,
     "text": "Great selection, fast delivery, and beautifully packaged books. My go-to store for weekend reads!",
     "name": "Jane Doe",
     "role": "Book Lover, Reader",
-    "avatar": "./feedback_img/user1.png",
-    "avatar2x": "./feedback_img/user1@2x.png"
+    "avatar": "/feedback_img/user1.png",
+    "avatar2x": "/feedback_img/user1@2x.png"
   },
   {
     "id": 5,
     "text": "Customer service was super helpful, and my order arrived earlier than expected. Highly recommend!",
     "name": "John Smith",
     "role": "Editor, BookMag",
-    "avatar": "./feedback_img/user2.png",
-    "avatar2x": "./feedback_img/user2@2x.png"
+    "avatar": "/feedback_img/user2.png",
+    "avatar2x": "/feedback_img/user2@2x.png"
   },
   {
     "id": 6,
     "text": "Love the curated picks and clear descriptions. Makes it easy to find my next favorite book.",
     "name": "Emily Johnson",
     "role": "Author, Novelist",
-    "avatar": "./feedback_img/user3.png",
-    "avatar2x": "./feedback_img/user3@2x.png"
+    "avatar": "/feedback_img/user3.png",
+    "avatar2x": "/feedback_img/user3@2x.png"
   }
 ]
