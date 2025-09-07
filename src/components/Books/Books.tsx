@@ -14,7 +14,6 @@ const Books = () => {
   const [isOpenBook, setIsOpenBook] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [visibleCount, setVisibleCount] = useState(24);
-
   const [startQuery, setStartQuery] = useState(false);
   const [isWaiting, setIsWaiting] = useState(true);
 
