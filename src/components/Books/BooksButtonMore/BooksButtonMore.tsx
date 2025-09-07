@@ -1,5 +1,8 @@
-import type { BooksButtonMoreProps } from "../../../services/types";
 import s from "./BooksButtonMore.module.css";
+
+interface BooksButtonMoreProps {
+  setVisibleCount: React.Dispatch<React.SetStateAction<number>>;
+}
 
 const BooksButtonMore = ({ setVisibleCount }: BooksButtonMoreProps) => {
   return (

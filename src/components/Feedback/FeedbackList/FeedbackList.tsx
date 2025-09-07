@@ -4,7 +4,6 @@ import users from "./data.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-// import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SlideNextButton from "./SlideNextButton/SlideNextButton";
 import SlidePrevButton from "./SlidePrevButton/SlidePrevButton";
