@@ -4,7 +4,7 @@ import {
   type Book,
   type BookCategoryProps,
 } from "../../services/types";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import s from "./Books.module.css";
 import BookCategory from "./BookCategory/BookCategory";
 import BookDisplay from "./BookDisplay/BookDisplay";
@@ -14,15 +14,30 @@ const Books = () => {
   const [isOpenBook, setIsOpenBook] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [visibleCount, setVisibleCount] = useState(24);
+
+  const [startQuery, setStartQuery] = useState(false);
+  const [isWaiting, setIsWaiting] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartQuery(true);
+      setIsWaiting(false);
+    }, 1250);
+    return () => clearTimeout(timer);
+  }, []);
+
   const { data, error, isLoading, isError } = useQuery<BookCategoryProps[]>({
     queryKey: ["books"],
     queryFn: fetchTopBooks,
+    enabled: startQuery,
   });
 
   const onBook = (book: Book) => {
     setSelectedBook(book);
     setIsOpenBook(true);
   };
+
+  const loading = isWaiting || isLoading;
 
   const allBooks = useMemo(
     () =>
@@ -42,9 +57,11 @@ const Books = () => {
           onClick={onBook}
           data={[{ list_name: "All Books", books: visibleBooks }]}
           error={error}
-          isLoading={isLoading}
+          isLoading={loading}
           isError={isError}
           setVisibleCount={setVisibleCount}
+          booksQuantity={allBooks.length}
+          visibleBooks={visibleBooks.length}
         />
       </div>
       {isOpenBook && selectedBook && (

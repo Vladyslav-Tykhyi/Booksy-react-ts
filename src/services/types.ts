@@ -75,6 +75,8 @@ export interface BooksQueryProps {
   isError: boolean;
   onClick: (book: Book) => void;
   setVisibleCount: React.Dispatch<React.SetStateAction<number>>;
+  booksQuantity: number;
+  visibleBooks: number;
 }
 
 export interface BookModalProps {
