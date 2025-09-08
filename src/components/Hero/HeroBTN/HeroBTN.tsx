@@ -3,7 +3,9 @@ import s from "./HeroBTN.module.css";
 const HeroBTN = () => {
   return (
     <>
-      <button className={s.hero_btn}>Shop Now!</button>
+      <a href="#books" className={s.hero_btn}>
+        Shop Now!
+      </a>
     </>
   );
 };

@@ -1,5 +1,6 @@
 .BookCategory {
   width: 308px;
+  position: relative;
 }
 
 .booksBox {
@@ -48,4 +49,11 @@
   .mobileSelect {
     display: none;
   }
+}
+
+.sidebar {
+  position: sticky;
+  top: 20px; /* відступ від верху вікна */
+  align-self: start; /* якщо sidebar в flex/grid */
+  height: max-content;
 }

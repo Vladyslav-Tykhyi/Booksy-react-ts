@@ -3,6 +3,7 @@ import {
   fetchTopBooks,
   type Book,
   type BookCategoryProps,
+  type BookWithCategory,
 } from "../../services/types";
 import { useState, useMemo, useEffect } from "react";
 import s from "./Books.module.css";
@@ -38,31 +39,51 @@ const Books = () => {
 
   const loading = isWaiting || isLoading;
 
-  const allBooks = useMemo(
+  const allBooks: BookWithCategory[] = useMemo(
     () =>
       data
-        ? data.flatMap((category) => category.books).filter((b) => b.price > 0)
+        ? data.flatMap((category) =>
+            category.books
+              .filter((b) => b.price > 0)
+              .map((b) => ({ ...b, list_name: category.list_name }))
+          )
         : [],
     [data]
   );
 
-  const visibleBooks = allBooks.slice(0, visibleCount);
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>("All categories");
+
+  const filteredBooks = useMemo(() => {
+    if (selectedCategory === "All categories") return allBooks;
+    return allBooks.filter((b) => b.list_name === selectedCategory);
+  }, [allBooks, selectedCategory]);
+
+  const visibleBooks = filteredBooks.slice(0, visibleCount);
 
   return (
     <div id="books" className={s.books}>
       <div className={s.wrapper}>
-        <BookCategory books={allBooks} visibleCount={visibleCount} />
+        <BookCategory
+          books={allBooks}
+          filteredBooks={filteredBooks}
+          visibleCount={visibleCount}
+          onCategorySelect={setSelectedCategory}
+          selectedCategory={selectedCategory}
+        />
+
         <BookDisplay
           onClick={onBook}
-          data={[{ list_name: "All Books", books: visibleBooks }]}
+          data={[{ list_name: selectedCategory, books: visibleBooks }]}
           error={error}
           isLoading={loading}
           isError={isError}
           setVisibleCount={setVisibleCount}
-          booksQuantity={allBooks.length}
+          booksQuantity={filteredBooks.length}
           visibleBooks={visibleBooks.length}
         />
       </div>
+
       {isOpenBook && selectedBook && (
         <BookModal
           onClick={() => setIsOpenBook(false)}

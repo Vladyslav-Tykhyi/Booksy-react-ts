@@ -1,42 +1,55 @@
-import type { Book } from "../../../services/types";
 import s from "./BookCategory.module.css";
+import { type BookWithCategory } from "../../../services/types";
 
-export interface BoosCategoryProps {
-  books: Book[];
+interface BookCategoryProps {
+  books: BookWithCategory[];
+  filteredBooks: BookWithCategory[];
   visibleCount: number;
+  onCategorySelect: (category: string) => void;
+  selectedCategory: string;
 }
 
-const categories = [
-  "All categories",
-  "Combined Print and E-book Fiction",
-  "Combined Print & E-book Nonfiction",
-  "Hardcover fiction",
-  "Paperback trade fiction",
-  "Paperback nonfiction",
-  "Advice, how-to & Miscellaneous",
-  "Children’s middle grade hardcover",
-];
+const BookCategory = ({
+  books,
+  filteredBooks,
+  visibleCount,
+  onCategorySelect,
+  selectedCategory,
+}: BookCategoryProps) => {
+  const categories = [
+    "All categories",
+    ...new Set(books.map((b) => b.list_name)),
+  ];
 
-const BookCategory = ({ books, visibleCount }: BoosCategoryProps) => {
   return (
     <div className={s.BookCategory}>
       <div className={s.booksBox}>
         <h2 className={s.heading}>Books</h2>
         <p>
-          Showing {visibleCount} of {books.length}
+          Showing {Math.min(visibleCount, filteredBooks.length)} of{" "}
+          {filteredBooks.length}
         </p>
       </div>
+
       {/* Desktop */}
-      <ul className={s.desktopList}>
+      <ul className={(s.desktopList, s.sidebar)}>
         {categories.map((cat) => (
-          <li key={cat} className={s.item}>
+          <li
+            key={cat}
+            className={`${s.item} ${selectedCategory === cat ? s.active : ""}`}
+            onClick={() => onCategorySelect(cat)}
+          >
             {cat}
           </li>
         ))}
       </ul>
 
       {/* Mobile */}
-      <select className={s.mobileSelect}>
+      <select
+        className={s.mobileSelect}
+        value={selectedCategory}
+        onChange={(e) => onCategorySelect(e.target.value)}
+      >
         {categories.map((cat) => (
           <option key={cat}>{cat}</option>
         ))}

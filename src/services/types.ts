@@ -22,10 +22,8 @@ export interface FooterFormProps {
 export interface ModalProps {
   isOpen: boolean;
   onClick: () => void;
-  userEmailField: { name: string; email: string; message?: string };
-  setUserEmailField: React.Dispatch<
-    React.SetStateAction<{ name: string; email: string; message?: string }>
-  >;
+  userEmailField: EmailData;
+  setUserEmailField: React.Dispatch<React.SetStateAction<EmailData>>;
 }
 
 export interface EventItem {
@@ -83,4 +81,17 @@ export interface BookModalProps {
   isOpen?: boolean;
   onClick: () => void;
   book: Book;
+}
+
+export interface Category {
+  list_name: string;
+}
+
+export const fetchCategoriesBooks = async () => {
+  const response = await axios.get("/books/category-list");
+  return response.data as Category[];
+};
+
+export interface BookWithCategory extends Book {
+  list_name: string;
 }

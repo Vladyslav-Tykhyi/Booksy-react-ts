@@ -1,12 +1,26 @@
 import s from "./Modal.module.css";
-
 import { createPortal } from "react-dom";
-
-import type { ModalProps } from "../../services/types";
-
-import clsx from "clsx";
 import { useEffect } from "react";
+import clsx from "clsx";
+
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 import ModalCloseButton from "../ModalCloseButton/ModalCloseButton";
+import type { ModalProps, EmailData } from "../../services/types";
+
+const modalSchema: yup.ObjectSchema<EmailData> = yup.object({
+  name: yup
+    .string()
+    .required("Name is required")
+    .min(2, "Name must be at least 2 characters"),
+  email: yup
+    .string()
+    .required("Email is required")
+    .email("Enter a valid email"),
+  message: yup.string().max(500, "Message can't exceed 500 characters"),
+});
 
 const Modal = ({
   onClick,
@@ -14,20 +28,20 @@ const Modal = ({
   userEmailField,
   setUserEmailField,
 }: ModalProps) => {
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClick();
-    }
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<EmailData>({
+    resolver: yupResolver(modalSchema),
+    defaultValues: userEmailField,
+  });
 
-  const onSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit: SubmitHandler<EmailData> = (data) => {
+    setUserEmailField(data);
     onClick();
-    setUserEmailField({
-      name: "",
-      email: "",
-      message: "",
-    });
+    reset({ message: "", name: "", email: "" });
   };
 
   useEffect(() => {
@@ -46,65 +60,70 @@ const Modal = ({
     };
   }, [isOpen, onClick]);
 
-  const onInput = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.currentTarget;
-    setUserEmailField((prev) => ({ ...prev, [name]: value }));
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClick();
+    }
   };
+
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
       <div className={s.modal} role="dialog" aria-modal="true">
         <ModalCloseButton onClick={onClick} />
         <h2 className={s.heading}>Register</h2>
         <p className={s.subText}>Cozy Book Club — "The Midnight Library"</p>
-        <form className={s.form} onSubmit={onSubmit}>
+
+        <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+          {/* Name */}
           <div className={s.formfield}>
             <label htmlFor="name" className={s.label}>
               Name*
             </label>
             <input
               type="text"
-              name="name"
+              id="name"
               placeholder="Ann"
               className={s.input}
-              required
-              autoComplete="name"
-              id="name"
-              onChange={onInput}
-              value={userEmailField?.name}
+              {...register("name")}
             />
+            {errors.name && (
+              <span className={s.error}>{errors.name.message}</span>
+            )}
           </div>
+
+          {/* Email */}
           <div className={s.formfield}>
             <label htmlFor="email" className={s.label}>
               Email*
             </label>
             <input
               type="email"
-              name="email"
+              id="email"
               placeholder="hello@booksy.com"
               className={s.input}
-              required
-              autoComplete="email"
-              id="email"
-              onChange={onInput}
-              value={userEmailField?.email}
-              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              {...register("email")}
             />
+            {errors.email && (
+              <span className={s.error}>{errors.email.message}</span>
+            )}
           </div>
+
+          {/* Message */}
           <div className={s.formfield}>
             <label htmlFor="message" className={s.label}>
               Message
             </label>
             <textarea
-              name="message"
               id="message"
               placeholder="Type your message..."
               className={clsx(s.input, s.textarea)}
-              onChange={onInput}
-              value={userEmailField?.message}
+              {...register("message")}
             />
+            {errors.message && (
+              <span className={s.error}>{errors.message.message}</span>
+            )}
           </div>
+
           <button className={s.btn} type="submit" aria-label="Submit modal">
             Register
           </button>
