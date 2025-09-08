@@ -6,6 +6,17 @@ export interface BoosCategoryProps {
   visibleCount: number;
 }
 
+const categories = [
+  "All categories",
+  "Combined Print and E-book Fiction",
+  "Combined Print & E-book Nonfiction",
+  "Hardcover fiction",
+  "Paperback trade fiction",
+  "Paperback nonfiction",
+  "Advice, how-to & Miscellaneous",
+  "Children’s middle grade hardcover",
+];
+
 const BookCategory = ({ books, visibleCount }: BoosCategoryProps) => {
   return (
     <div className={s.BookCategory}>
@@ -15,6 +26,21 @@ const BookCategory = ({ books, visibleCount }: BoosCategoryProps) => {
           Showing {visibleCount} of {books.length}
         </p>
       </div>
+      {/* Desktop */}
+      <ul className={s.desktopList}>
+        {categories.map((cat) => (
+          <li key={cat} className={s.item}>
+            {cat}
+          </li>
+        ))}
+      </ul>
+
+      {/* Mobile */}
+      <select className={s.mobileSelect}>
+        {categories.map((cat) => (
+          <option key={cat}>{cat}</option>
+        ))}
+      </select>
     </div>
   );
 };
