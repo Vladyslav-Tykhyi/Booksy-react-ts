@@ -10,7 +10,7 @@ const FooterForm = ({ onClick, userEmail }: FooterFormProps) => {
   };
 
   return (
-    <div>
+    <div className={s.formWrapper}>
       <FooterFormJoin />
       <form className={s.form} action={form}>
         <input

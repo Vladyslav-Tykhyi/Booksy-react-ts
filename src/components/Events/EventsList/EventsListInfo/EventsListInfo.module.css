@@ -20,3 +20,9 @@
   line-height: 150%;
   color: #0b0500;
 }
+
+@media screen and (max-width: 1439px) {
+  .text {
+    margin: 0 0 16px 0;
+  }
+}

@@ -1,19 +1,14 @@
 .booksList {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px 24px;
-  width: 980px;
-}
-
-.booksListItem {
-  width: calc((100% - 72px) / 4);
-  display: flex;
   flex-direction: column;
+  gap: 40px 24px;
+  width: 343px;
 }
 
 .bookImg {
   display: block;
   margin: 0 0 16px 0;
+  width: 100%;
 }
 
 .contentWrapper {
@@ -54,4 +49,20 @@
   font-size: 20px;
   line-height: 150%;
   color: #0b0500;
+}
+
+@media screen and (min-width: 1440px) {
+  .booksList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px 24px;
+    width: 980px;
+  }
+
+  .booksListItem {
+    width: calc((100% - 72px) / 4);
+    display: flex;
+    flex-direction: column;
+  }
 }

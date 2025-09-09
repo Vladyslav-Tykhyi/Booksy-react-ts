@@ -1,4 +1,14 @@
 .footer {
-  padding: 80px 64px;
+  padding: 80px 16px;
+  margin: 0 auto;
   background-color: #ea8d50;
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px 64px;
+  }
+  .footer_logo {
+    margin: 0 0 32px 0;
+  }
 }

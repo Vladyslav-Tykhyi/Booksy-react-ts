@@ -15,9 +15,11 @@
   position: relative;
   border-radius: 8px;
   background-color: #fff;
-  padding: 64px;
-  width: 866px;
+  padding: 64px 16px;
+  width: 343px;
   background-color: #fceee6;
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
 .closeButton {
@@ -76,7 +78,7 @@
 }
 
 .form {
-  width: 738px;
+  width: 311px;
 }
 
 .formfield {
@@ -142,7 +144,7 @@
   font-size: 16px;
   line-height: 150%;
   color: #fff;
-  padding: 12px 140px;
+  padding: 12px 124px;
   border: 1px solid #e15d05;
   border-radius: 4px;
   background-color: #e15d05;
@@ -173,4 +175,18 @@
 .error {
   color: red;
   margin: 8px 0 0 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .modal {
+    padding: 64px;
+    width: 866px;
+  }
+
+  .form {
+    width: 738px;
+  }
+  .btn {
+    padding: 12px 140px;
+  }
 }

@@ -1,67 +1,100 @@
-.heroBG_v1 {
-  background-image: url("./heroImg/banner_1.png");
-  max-width: 1312px;
+.generalBG {
+  max-width: 343px;
+  padding: 90px 155px 16px 16px;
   border-radius: 16px;
-  padding: 155px 56px 56px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+}
+.heroBG_v1 {
+  background-image: url("./heroImg/imgPhone/mobImg.png");
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .heroBG {
-    background-image: url("./heroImg/banner_1@2x.png");
+    background-image: url("./heroImg/imgPhone/mobImg@2x.png");
   }
 }
-
 .heroBG_v2 {
-  background-image: url("./heroImg/baner_2.png");
-  max-width: 1312px;
-  border-radius: 16px;
-  padding: 155px 56px 56px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-image: url("./heroImg/imgPhone/mobImg2.png");
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .heroBG {
-    background-image: url("./heroImg/baner_2@2x.png");
+    background-image: url("./heroImg/imgPhone/mobImg2@2x.png");
   }
 }
 
 .heroBG_v3 {
-  background-image: url("./heroImg/baner_3.png");
-  max-width: 1312px;
-  border-radius: 16px;
-  padding: 155px 56px 56px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-image: url("./heroImg/imgPhone/mobImg3.png");
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .heroBG {
-    background-image: url("./heroImg/baner_3@2x.png");
+    background-image: url("./heroImg/imgPhone/mobImg3@2x.png");
   }
 }
 
 .heroBG_v4 {
-  background-image: url("./heroImg/baner_4.png");
-  max-width: 1312px;
-  border-radius: 16px;
-  padding: 155px 56px 56px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-image: url("./heroImg/imgPhone/mobImg4.png");
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .heroBG {
-    background-image: url("./heroImg/baner_4@2x.png");
+    background-image: url("./heroImg/imgPhone/mobImg4@2x.png");
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .generalBG {
+    max-width: 1312px;
+    padding: 155px 56px 56px;
+  }
+  .heroBG_v1 {
+    background-image: url("./heroImg/banner_1.png");
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .heroBG {
+      background-image: url("./heroImg/banner_1@2x.png");
+    }
+  }
+
+  .heroBG_v2 {
+    background-image: url("./heroImg/baner_2.png");
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .heroBG {
+      background-image: url("./heroImg/baner_2@2x.png");
+    }
+  }
+
+  .heroBG_v3 {
+    background-image: url("./heroImg/baner_3.png");
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .heroBG {
+      background-image: url("./heroImg/baner_3@2x.png");
+    }
+  }
+
+  .heroBG_v4 {
+    background-image: url("./heroImg/baner_4.png");
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .heroBG {
+      background-image: url("./heroImg/baner_4@2x.png");
+    }
   }
 }

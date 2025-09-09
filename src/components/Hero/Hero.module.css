@@ -1,14 +1,24 @@
 .hero {
   padding: 0 0 32px 0;
 }
+
 .hero_container {
-  margin: 24px 0 0 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  justify-content: end;
+  margin: 24px 0 0 0;
 }
+
 .hero_box_btn {
   width: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (min-width: 1440px) {
+  .hero_container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }

@@ -87,7 +87,7 @@ const Modal = ({
               {...register("name")}
             />
             {errors.name && (
-              <span className={s.error}>{errors.name.message}</span>
+              <div className={s.error}>{errors.name.message}</div>
             )}
           </div>
 
@@ -104,7 +104,7 @@ const Modal = ({
               {...register("email")}
             />
             {errors.email && (
-              <span className={s.error}>{errors.email.message}</span>
+              <div className={s.error}>{errors.email.message}</div>
             )}
           </div>
 
@@ -119,9 +119,6 @@ const Modal = ({
               className={clsx(s.input, s.textarea)}
               {...register("message")}
             />
-            {errors.message && (
-              <span className={s.error}>{errors.message.message}</span>
-            )}
           </div>
 
           <button className={s.btn} type="submit" aria-label="Submit modal">

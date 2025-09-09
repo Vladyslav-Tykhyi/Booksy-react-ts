@@ -1,11 +1,40 @@
-.list {
-  display: flex;
-  gap: 24px;
-}
-
 .listItem {
-  width: calc((100% - (24px * 2)) / 3);
+  height: 461px;
   display: flex;
   flex-direction: column;
-  height: 521px;
+}
+
+.buttonBox {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 0 auto;
+}
+
+:global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+  bottom: 16px;
+  width: 70px;
+}
+
+:global(.mySwiperEvents .swiper-pagination-bullet) {
+  background-color: #333;
+  opacity: 1;
+}
+
+:global(.mySwiperEvents .swiper-pagination-bullet-active) {
+  background-color: #ff6600;
+}
+
+@media screen and (min-width: 1440px) {
+  .list {
+    display: flex;
+    gap: 24px;
+  }
+  .listItem {
+    width: calc((100% - (24px * 2)) / 3);
+    display: flex;
+    flex-direction: column;
+    height: 521px;
+  }
 }

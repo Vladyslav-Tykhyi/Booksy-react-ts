@@ -1,7 +1,13 @@
 .location_map {
-  width: 1312px;
-  height: 738px;
+  width: 343px;
+  height: 395px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
   filter: grayscale(100%) contrast(90%) brightness(95%);
+}
+
+@media screen and (min-width: 1440px) {
+  .location_map {
+    width: 1312px;
+    height: 738px;
+  }
 }

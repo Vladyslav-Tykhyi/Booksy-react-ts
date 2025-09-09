@@ -4,9 +4,15 @@
 
 .heading {
   font-weight: 600;
-  font-size: 48px;
+  font-size: 36px;
   line-height: 120%;
   letter-spacing: -0.01em;
   color: #0b0500;
   margin: 0 0 24px 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .heading {
+    font-size: 48px;
+  }
 }

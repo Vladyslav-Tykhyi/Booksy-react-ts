@@ -1,9 +1,17 @@
 .hero_text {
   font-weight: 600;
-  font-size: 52px;
+  font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.01em;
   color: #fff;
-  max-width: 545px;
-  margin: 0 0 20px 0;
+  max-width: 172px;
+  margin: 0 0 16px 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .hero_text {
+    font-size: 52px;
+    max-width: 274px;
+    margin: 0 0 20px 0;
+  }
 }

@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
 }
 
 .modal {
@@ -17,15 +16,15 @@
   max-width: 90vw;
   border-radius: 8px;
   background-color: #fceee6;
-  width: 1300px;
+  width: 343px;
+  padding: 64px 16px;
+  max-height: 95vh;
+  overflow-y: scroll;
 }
-.container {
-  padding: 64px 104px;
-  display: flex;
-  gap: 24px;
-}
+
 .img {
   display: block;
+  margin: 0 0 24px 0;
 }
 
 .bookNaming {
@@ -98,10 +97,8 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
 }
 
-.bookListButtons {
-  display: flex;
-  gap: 24px;
-  margin: 0 0 32px 0;
+.bookButtonItem {
+  margin: 0 0 24px 0;
 }
 
 .bookGeneralButton {
@@ -166,10 +163,6 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.accordion {
-  width: 759px;
-}
-
 .AccordionChevron {
   transition: transform 300ms;
 }
@@ -222,4 +215,29 @@
   width: 100%;
   background-color: transparent;
   border-top: 1px solid rgba(11, 5, 0, 0.15);
+}
+
+@media screen and (min-width: 1440px) {
+  .modal {
+    width: 1300px;
+  }
+  .container {
+    padding: 64px 104px;
+    display: flex;
+    gap: 24px;
+  }
+
+  .bookListButtons {
+    display: flex;
+    gap: 24px;
+    margin: 0 0 32px 0;
+  }
+
+  .accordion {
+    width: 759px;
+  }
+
+  .bookButtonItem {
+    margin: 0;
+  }
 }

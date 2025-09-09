@@ -1,5 +1,13 @@
+@media screen and (max-width: 1439px) {
+  .formWrapper {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
 .form {
   border-radius: 8px;
+  display: flex;
 }
 
 .input {
@@ -9,7 +17,7 @@
   color: rgba(11, 5, 0, 0.85);
   padding: 12px;
   background-color: rgba(11, 5, 0, 0.05);
-  width: 278px;
+  width: 221px;
   height: 48px;
   margin: 0 16px 0 0;
   border: 1px solid rgba(11, 5, 0, 0.15);
@@ -41,7 +49,7 @@
   line-height: 150%;
   color: #0b0500;
   padding: 12px 24px;
-  border: 1px solid #0b0500;
+  outline: 1px solid #0b0500;
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
@@ -66,4 +74,10 @@
   background-color: #333;
   border-color: #333;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 1440px) {
+  .input {
+    width: 278px;
+  }
 }

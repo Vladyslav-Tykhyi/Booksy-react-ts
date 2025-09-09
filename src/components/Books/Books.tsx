@@ -14,7 +14,7 @@ import BookModal from "./BookModal/BookModal";
 const Books = () => {
   const [isOpenBook, setIsOpenBook] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-  const [visibleCount, setVisibleCount] = useState(24);
+  const [visibleCount, setVisibleCount] = useState(8);
   const [startQuery, setStartQuery] = useState(false);
   const [isWaiting, setIsWaiting] = useState(true);
 
@@ -24,6 +24,12 @@ const Books = () => {
       setIsWaiting(false);
     }, 1250);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth >= 1440) {
+      setVisibleCount(24);
+    }
   }, []);
 
   const { data, error, isLoading, isError } = useQuery<BookCategoryProps[]>({

@@ -1,5 +1,6 @@
 import s from "./BookCategory.module.css";
 import { type BookWithCategory } from "../../../services/types";
+import clsx from "clsx";
 
 interface BookCategoryProps {
   books: BookWithCategory[];
@@ -32,7 +33,7 @@ const BookCategory = ({
       </div>
 
       {/* Desktop */}
-      <ul className={(s.desktopList, s.sidebar)}>
+      <ul className={clsx(s.desktopList, s.sidebar)}>
         {categories.map((cat) => (
           <li
             key={cat}

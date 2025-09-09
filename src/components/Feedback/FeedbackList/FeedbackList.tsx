@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 import users from "./data.json";
 
@@ -10,24 +11,46 @@ import SlidePrevButton from "./SlidePrevButton/SlidePrevButton";
 import s from "./FeedbackList.module.css";
 
 const FeedbackList = () => {
+  const [visibleUsers, setVisibleUsers] = useState(users);
+
+  useEffect(() => {
+    const updateUsers = () => {
+      if (window.innerWidth < 1440) {
+        setVisibleUsers(users.slice(0, 4));
+      } else {
+        setVisibleUsers(users);
+      }
+    };
+
+    updateUsers();
+    window.addEventListener("resize", updateUsers);
+    return () => window.removeEventListener("resize", updateUsers);
+  }, []);
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={24}
-      slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
       className={clsx(s.list, s.mySwiper, "mySwiper")}
       tag="ul"
-      width={1311}
-      height={217}
       autoplay={{
-        delay: 7500,
         disableOnInteraction: false,
+        delay: 10000,
+      }}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 24,
+        },
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
       }}
     >
-      {users.map((u) => (
-        <SwiperSlide key={u.id} tag="li" className={clsx(s.listItem)}>
+      {visibleUsers.map((u) => (
+        <SwiperSlide key={u.id} tag="li" className={s.listItem}>
           <p className={s.userText}>{u.text}</p>
           <div className={s.userProfile}>
             <img

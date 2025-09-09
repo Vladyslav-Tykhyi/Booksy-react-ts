@@ -4,7 +4,7 @@
 .listItem {
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
-  padding: 32px;
+  padding: 32px 32px 102px;
 }
 
 .userText {
@@ -56,4 +56,16 @@
 
 :global(.mySwiper .swiper-pagination-bullet-active) {
   background-color: #ff6600;
+}
+
+@media screen and (max-width: 1440px) {
+  .listItem {
+    height: 314px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .listItem {
+    padding: 32px;
+  }
 }
