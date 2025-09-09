@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div>
       <div className={s.container}>
-        {/* <Header /> */}
+        <Header />
         <main>
           <Hero />
           <Books />
