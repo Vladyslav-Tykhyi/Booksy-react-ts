@@ -33,10 +33,11 @@ const App = () => {
         position="top-center"
         reverseOrder={true}
         toastOptions={{
-          duration: 5000,
+          duration: 3500,
           style: {
-            background: "orange",
+            background: "#e15d05",
             padding: "8px",
+            zIndex: 9999,
           },
           removeDelay: 1000,
         }}

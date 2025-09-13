@@ -9,6 +9,7 @@ import clsx from "clsx";
 import type { BookModalProps } from "../../../services/types";
 import s from "./BookModal.module.css";
 import ModalCloseButton from "../../ModalCloseButton/ModalCloseButton";
+import toast from "react-hot-toast";
 
 const BookModal = ({ onClick, isOpen, book }: BookModalProps) => {
   const [count, setCount] = useState<number>(1);
@@ -43,6 +44,15 @@ const BookModal = ({ onClick, isOpen, book }: BookModalProps) => {
 
   const totalPrice = (book.price * count).toFixed(2);
 
+  // !!hot-roast
+
+  function addBooks() {
+    toast.success(`You have successfully added ${count} books to your cart!`);
+  }
+  function buyBooks() {
+    toast.error("You are unable to order books. We are working on this.");
+  }
+
   return createPortal(
     <div className={s.backdrop} onClick={handleBackdropClick}>
       <div className={s.modal}>
@@ -70,6 +80,7 @@ const BookModal = ({ onClick, isOpen, book }: BookModalProps) => {
               <ul className={s.bookListButtons}>
                 <li className={s.bookButtonItem}>
                   <button
+                    onClick={addBooks}
                     type="button"
                     className={clsx(s.bookGeneralButton, s.bookAddButton)}
                   >
@@ -80,6 +91,7 @@ const BookModal = ({ onClick, isOpen, book }: BookModalProps) => {
                   <button
                     type="button"
                     className={clsx(s.bookGeneralButton, s.bookBuyButton)}
+                    onClick={buyBooks}
                   >
                     Buy Now
                   </button>
