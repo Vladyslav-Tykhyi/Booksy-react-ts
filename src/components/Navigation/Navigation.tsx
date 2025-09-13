@@ -1,4 +1,3 @@
-import type React from "react";
 import s from "./Navigation.module.css";
 
 type NavLink = {
@@ -14,7 +13,7 @@ const links: NavLink[] = [
   { href: "#location", label: "Location" },
 ];
 
-const Navigation: React.FC = () => {
+const Navigation = () => {
   return (
     <nav className={s.nav}>
       <ul className={s.list}>

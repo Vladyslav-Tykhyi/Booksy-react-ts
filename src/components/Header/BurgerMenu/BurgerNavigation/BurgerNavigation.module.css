@@ -1,12 +1,10 @@
 .list {
-  width: 415px;
-  height: 24px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 32px;
   align-items: center;
 }
-.list_item {
-}
+
 .list_item_link {
   position: relative;
   display: inline-block;
@@ -45,10 +43,4 @@
 
 .list_item_link:focus-visible::after {
   transform: scaleX(1);
-}
-
-@media screen and (max-width: 1439px) {
-  .nav {
-    display: none;
-  }
 }

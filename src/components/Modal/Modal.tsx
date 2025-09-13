@@ -38,10 +38,16 @@ const Modal = ({
     defaultValues: userEmailField,
   });
 
+  useEffect(() => {
+    if (isOpen) {
+      reset(userEmailField);
+    }
+  }, [isOpen, userEmailField, reset]);
+
   const onSubmit: SubmitHandler<EmailData> = (data) => {
     setUserEmailField(data);
     onClick();
-    reset({ message: "", name: "", email: "" });
+    reset();
   };
 
   useEffect(() => {
@@ -90,7 +96,6 @@ const Modal = ({
               <div className={s.error}>{errors.name.message}</div>
             )}
           </div>
-
           {/* Email */}
           <div className={s.formfield}>
             <label htmlFor="email" className={s.label}>
@@ -107,7 +112,6 @@ const Modal = ({
               <div className={s.error}>{errors.email.message}</div>
             )}
           </div>
-
           {/* Message */}
           <div className={s.formfield}>
             <label htmlFor="message" className={s.label}>
@@ -120,7 +124,6 @@ const Modal = ({
               {...register("message")}
             />
           </div>
-
           <button className={s.btn} type="submit" aria-label="Submit modal">
             Register
           </button>

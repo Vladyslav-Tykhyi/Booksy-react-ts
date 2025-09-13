@@ -1,0 +1,34 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 8px;
+  background-color: #fceee6;
+  padding: 16px;
+}
+
+.btn {
+  background: transparent;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
