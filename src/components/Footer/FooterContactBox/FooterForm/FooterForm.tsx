@@ -23,7 +23,9 @@ const FooterForm = ({ onClick, userEmail }: FooterFormProps) => {
         />
         <button
           className={s.form_btn}
-          onClick={onClick}
+          onClick={() => {
+            onClick();
+          }}
           type="submit"
           aria-label="Open modal"
         >

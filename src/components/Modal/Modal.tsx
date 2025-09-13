@@ -10,6 +10,8 @@ import * as yup from "yup";
 import ModalCloseButton from "../ModalCloseButton/ModalCloseButton";
 import type { ModalProps, EmailData } from "../../services/types";
 
+import toast from "react-hot-toast";
+
 const modalSchema: yup.ObjectSchema<EmailData> = yup.object({
   name: yup
     .string()
@@ -48,6 +50,10 @@ const Modal = ({
     setUserEmailField(data);
     onClick();
     reset();
+
+    toast.success(
+      `You have successfully registered, we will contact you as soon as possible!`
+    );
   };
 
   useEffect(() => {

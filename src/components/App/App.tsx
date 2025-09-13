@@ -11,6 +11,8 @@ import Events from "../Events/Events";
 import Feedback from "../Feedback/Feedback";
 import Books from "../Books/Books";
 
+import { Toaster } from "react-hot-toast";
+
 const App = () => {
   const [email, setEmail] = useState<EmailData>({
     name: "",
@@ -27,6 +29,19 @@ const App = () => {
 
   return (
     <div>
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+        toastOptions={{
+          duration: 5000,
+          style: {
+            background: "orange",
+            padding: "8px",
+          },
+          removeDelay: 1000,
+        }}
+      />
+
       <div className={s.container}>
         <Header />
         <main>
