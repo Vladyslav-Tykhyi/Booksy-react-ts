@@ -35,6 +35,90 @@
   border: 1px solid #ccc;
 }
 
+.customSelect {
+  width: 342px;
+  height: 43px;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #0b0500;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background-color: rgba(11, 5, 0, 0.05);
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.customSelect:hover {
+  background-color: rgba(11, 5, 0, 0.1);
+  border-color: rgba(11, 5, 0, 0.3);
+}
+
+.customSelect:focus {
+  outline: none;
+  border-color: #0b0500;
+  box-shadow: 0 0 0 3px rgba(11, 5, 0, 0.25);
+  background-color: rgba(11, 5, 0, 0.12);
+}
+
+.customSelect:active {
+  background-color: rgba(11, 5, 0, 0.2);
+  transform: scale(0.99);
+}
+
+.customSelectList {
+  width: 342px;
+  height: 296px;
+  border-radius: 4px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #e15d05 #ccc;
+}
+.customSelectList::-webkit-scrollbar {
+  width: 5px;
+}
+
+.customSelectList::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.customSelectList::-webkit-scrollbar-thumb {
+  background-color: #e15d05;
+  border-radius: 4px;
+  min-height: 47px;
+}
+
+.customSelectList::-webkit-scrollbar-thumb:hover {
+  background-color: #e15d05;
+}
+
+.customSelectItem {
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 342px;
+  height: 37px;
+  font-size: 14px;
+  line-height: 150%;
+  color: #0b0500;
+  background-color: rgba(11, 5, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.customSelectItem:hover {
+  background-color: rgba(11, 5, 0, 0.1);
+}
+
+.customSelectItem:focus {
+  outline: none;
+  border: 1px solid #0b0500;
+  background-color: rgba(11, 5, 0, 0.15);
+}
+
+.customSelectItem:active {
+  background-color: rgba(11, 5, 0, 0.2);
+  transform: scale(0.98);
+}
+
 @media (min-width: 1440px) {
   .BookCategory {
     width: 308px;
@@ -44,7 +128,10 @@
     display: block;
   }
 
-  .mobileSelect {
+  .customSelect {
+    display: none;
+  }
+  .customSelectList {
     display: none;
   }
 }

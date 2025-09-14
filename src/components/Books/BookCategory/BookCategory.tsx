@@ -1,6 +1,7 @@
 import s from "./BookCategory.module.css";
 import { type BookWithCategory } from "../../../services/types";
 import clsx from "clsx";
+import { useState } from "react";
 
 interface BookCategoryProps {
   books: BookWithCategory[];
@@ -21,6 +22,8 @@ const BookCategory = ({
     "All categories",
     ...new Set(books.map((b) => b.list_name)),
   ];
+
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={s.BookCategory}>
@@ -46,15 +49,26 @@ const BookCategory = ({
       </ul>
 
       {/* Mobile */}
-      <select
-        className={s.mobileSelect}
-        value={selectedCategory}
-        onChange={(e) => onCategorySelect(e.target.value)}
-      >
-        {categories.map((cat) => (
-          <option key={cat}>{cat}</option>
-        ))}
-      </select>
+
+      <button className={s.customSelect} onClick={() => setOpen(!open)}>
+        {selectedCategory || "Select your category"}
+      </button>
+      {open && (
+        <ul className={s.customSelectList}>
+          {categories.map((cat) => (
+            <li
+              className={s.customSelectItem}
+              key={cat}
+              onClick={() => {
+                onCategorySelect(cat);
+                setOpen(false);
+              }}
+            >
+              {cat}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
